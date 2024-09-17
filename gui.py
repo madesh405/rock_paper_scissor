@@ -2,19 +2,21 @@
 import tkinter as tk
 from random import choice
 
-def crps():
+def crps() -> str:
     weapons=["rock","paper","scissor"]
     c=choice(weapons)
     return c
 
-def prps(n:int) -> str:
+def prps(n:int):
     weapons=["rock","paper","scissor"]
     c=crps()
     print("player :",weapons[n],"\ncomputer :",c,"\n")
 
 
+#the main window
 
 root=tk.Tk()
+
 root.title("Rock Paper Scissor Game")
 root.geometry('700x500')
 photo1 = tk.PhotoImage(file = "rock.png")
@@ -26,8 +28,5 @@ s=tk.Button(root,text="Scissor",image=photo3,command=lambda:prps(2))
 r.grid(row=1,column=0)
 p.grid(row=1, column=1)
 s.grid(row=1,column=2)
-
-
-
 
 root.mainloop()
